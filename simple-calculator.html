@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 使用CSS样式，将内容居中 */
+body {
+  text-align: center;
+}
+</style>
+<script>
+// 定义一个函数，用于计算两个数的加法
+function add(x, y) {
+  return x + y;
+}
+
+// 定义一个函数，用于计算两个数的减法
+function subtract(x, y) {
+  return x - y;
+}
+
+// 定义一个函数，用于计算两个数的乘法
+function multiply(x, y) {
+  return x * y;
+}
+
+// 定义一个函数，用于计算两个数的除法
+function divide(x, y) {
+  return x / y;
+}
+
+// 定义一个函数，用于获取用户的输入和选择，并计算并显示结果
+function calculate() {
+  // 获取用户的选择
+  var choice = document.getElementById("choice").value;
+  // 获取两个数
+  var num1 = parseFloat(document.getElementById("num1").value);
+  var num2 = parseFloat(document.getElementById("num2").value);
+  // 定义一个变量，用于存储结果
+  var result;
+  // 根据用户的选择，调用相应的函数，计算结果
+  if (choice == '1') {
+    result = add(num1, num2);
+  } else if (choice == '2') {
+    result = subtract(num1, num2);
+  } else if (choice == '3') {
+    result = multiply(num1, num2);
+  } else if (choice == '4') {
+    result = divide(num1, num2);
+  } else {
+    alert("无效的输入");
+    return;
+  }
+  // 显示结果
+  document.getElementById("result").innerHTML = "结果是：" + result;
+}
+
+// 定义一个函数，用于监听回车键的按下，并触发计算函数
+function enterKey(event) {
+  // 获取按下的键的编码
+  var keyCode = event.keyCode || event.which;
+  // 如果是回车键，就调用计算函数
+  if (keyCode == 13) {
+    calculate();
+  }
+}
+</script>
+</head>
+<body>
+<h1>简单的计算器</h1>
+<p>请选择操作：</p>
+<select id="choice">
+  <option value="1">加法</option>
+  <option value="2">减法</option>
+  <option value="3">乘法</option>
+  <option value="4">除法</option>
+</select>
+<p>请输入第一个数：</p>
+<input type="number" id="num1" onkeypress="enterKey(event)">
+<p>请输入第二个数：</p>
+<input type="number" id="num2" onkeypress="enterKey(event)">
+<p><button onclick="calculate()">计算</button></p>
+<p id="result"></p>
+</body>
+</html>

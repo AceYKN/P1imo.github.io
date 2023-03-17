@@ -1,0 +1,45 @@
+#container {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 40px 0;
+}
+
+form {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+input[type=text] {
+    width: 300px;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+button[type=submit] {
+    width: 100px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+}
+
+canvas {
+    border: 2px solid #ccc;
+}
